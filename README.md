@@ -5,5 +5,3 @@
 Qingchu is a language designed around one principle: **code should read like
 human speech and mathematical notation.** It has typed bindings, math and
 string contexts, and a syntax that aims to be readable at a glance.
-
-## A Quick Look
