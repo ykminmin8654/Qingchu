@@ -65,7 +65,12 @@ name ts string
 
 print Hello name_string .
 
-text
+```text
+let name = Bob
+name ts string
+
+print Hello name_string .
+```
 
 A binding is referenced as `name_type` — so `name_string`, `name_number`,
 `name_boolean`. The type is part of the name.
@@ -76,7 +81,10 @@ A binding is referenced as `name_type` — so `name_string`, `name_number`,
 math let total = price * quantity .
 math print total .
 
-text
+```text
+math let total = price * quantity .
+math print total .
+```
 
 Inside `math`, `total` means `total_number`. Inside `string`, `name` means
 `name_string`. This is the whole purpose of the context markers.
@@ -85,14 +93,21 @@ Inside `math`, `total` means `total_number`. Inside `string`, `name` means
 let pi = 3.14
 pi ts constant number
 
-text
+```text
+let pi = 3.14
+pi ts constant number
+```
 
 ### Speech-like control flow
 math when i < 3
 print Count: i .
 new i = i + 1 .
 
-text
+```text
+math when i < 3
+print Count: i .
+new i = i + 1 .
+```
 
 ---
 
@@ -102,7 +117,10 @@ text
 let name = Bob
 name ts string
 
-text
+```text
+let name = Bob
+name ts string
+```
 
 `let` creates a binding. The `ts` line declares its type.
 
@@ -120,7 +138,9 @@ text
 ### Output
 print Hello World .
 
-text
+```text
+print Hello World .
+```
 
 Everything between `print` and ` .` is content. Words that match a declared
 binding are resolved; everything else prints as text.
@@ -130,14 +150,20 @@ ask What is your name? .
 response = name
 name ts string
 
-text
+```text
+ask What is your name? .
+response = name
+name ts string
+```
 
 `ask` prints the question, waits for input, and binds the answer.
 
 ### Reassignment
 math new count = count + 1 .
 
-text
+```text
+math new count = count + 1 .
+```
 
 `new` reassigns an existing binding. It requires a context marker.
 
@@ -147,21 +173,34 @@ print You are an adult .
 else
 print You are a minor .
 
-text
+```text
+math if age > 18
+print You are an adult .
+else
+print You are a minor .
+```
 
 ### Loops
 math when i < 3
 print i .
 new i = i + 1 .
 
-text
+```text
+math when i < 3
+print i .
+new i = i + 1 .
+```
 
 ### Functions
 define double(x) as x * 2
 x ts number
 double ts number
 
-text
+```text
+define double(x) as x * 2
+x ts number
+double ts number
+```
 define square(x) as
 x ts number
 square ts number
@@ -171,7 +210,10 @@ result ts number
 
 calculate result_number .
 
-text
+```text
+
+calculate result_number .
+```
 
 ### Comments
 !! This is a single-line comment !!
@@ -180,7 +222,9 @@ text
 multi-line comment
 !!!
 
-text
+```text
+!!!
+```
 
 ### Escapes
 
@@ -213,12 +257,12 @@ error missing terminator on line 1(print statement)
 error undefined variable on line 5(print statement)
 error cannot reassign constant on line 12(new statement)
 
-text
+
 
 The format is:
 error <what went wrong> on line <N>(<which statement>)
 
-text
+
 
 ---
 
@@ -252,7 +296,7 @@ grade_calculator.qc	An interactive program that asks for scores and computes a g
 everything.qc	Exercises every language feature
 The grade calculator in full:
 
-text
+
 !! Grade Calculator !!
 
 print Grade Calculator .
@@ -341,7 +385,6 @@ Why "Qingchu"?
 That's the goal: a language where the code is clear at a glance.
 
 Project Structure
-text
 qingchu/
 ├── src/main/java/qingchu/
 │   ├── Main.java              — entry point
