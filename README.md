@@ -12,10 +12,12 @@ to be readable at a glance.
 ---
 
 ## A Quick Look
+
+```text
 !! A simple Qingchu program !!
 
 let name = Bob
-name ts string
+    name ts string
 
 print Hello name_string .
 
@@ -23,23 +25,24 @@ math let price = 10 .
 math let quantity = 5 .
 math let total = price * quantity .
 math print total .
-
-text
+```
 
 Output:
+
+```text
 Hello Bob
 50
-
-text
+```
 
 An interactive program:
+
+```text
 ask What is your name? .
-response = name
-name ts string
+    response = name
+        name ts string
 
 string print Nice to meet you, name .
-
-text
+```
 
 ---
 

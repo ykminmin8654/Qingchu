@@ -55,7 +55,7 @@ public class Interpreter {
 
         if (scope.has(b.key())) {
             throw new QingchuError(
-                ErrorKind.UNDEFINED_VARIABLE, n.line(), "let statement");
+                ErrorKind.DUPLICATE_BINDING, n.line(), "let statement");
         }
         scope.define(b);
     }
@@ -159,7 +159,13 @@ public class Interpreter {
         if (!n.question().isEmpty()) {
             System.out.print(n.question() + " ");
         }
-        String answer = input.nextLine();
+        String answer;
+        try {
+            answer = input.nextLine();
+        } catch (java.util.NoSuchElementException e) {
+            throw new QingchuError(
+                ErrorKind.INVALID_INPUT, n.line(), "ask statement");
+        }
 
         Type type = typeFromName(n.typeName(), n.line());
         Value value;
@@ -214,7 +220,7 @@ public class Interpreter {
                     case "*": res = l * r; break;
                     case "/":
                         if (r == 0) throw new QingchuError(
-                            ErrorKind.TYPE_MISMATCH, line, "statement");
+                            ErrorKind.DIVISION_BY_ZERO, line, "statement");
                         res = l / r;
                         break;
                     default:
