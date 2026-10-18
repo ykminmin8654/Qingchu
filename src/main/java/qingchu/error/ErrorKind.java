@@ -26,6 +26,8 @@ public enum ErrorKind {
 
     // === Interpreter errors ===
     UNDEFINED_VARIABLE("undefined variable"),
+    DUPLICATE_BINDING("binding already exists"),
+    DIVISION_BY_ZERO("division by zero"),
     CANNOT_REASSIGN_CONSTANT("cannot reassign constant"),
     TYPE_MISMATCH("type mismatch"),
     INVALID_INPUT("invalid input"),
